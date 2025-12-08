@@ -33,10 +33,9 @@ micromamba activate entity_extraction_env
 ```
 
 ### 3. Run ollama with Granite 4 on ppc64le
-````bash
+```bash
 podman run -d --name ollama --replace -p 11434:11434 -v ollama:/root/.ollama quay.io/anchinna/ollama:v3
 podman exec -it ollama /opt/ollama/ollama pull granite4:tiny-h
-
 ```
 
 
