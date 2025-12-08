@@ -32,7 +32,15 @@ micromamba create -n entity_extraction_env python=3.11
 micromamba activate entity_extraction_env
 ```
 
-### 3. Install dependencies
+### 3. Run ollama with Granite 4 on ppc64le
+````bash
+podman run -d --name ollama --replace -p 11434:11434 -v ollama:/root/.ollama quay.io/anchinna/ollama:v3
+podman exec -it ollama /opt/ollama/ollama pull granite4:tiny-h
+
+```
+
+
+### 4. Install dependencies
 ```bash
 pip install streamlit openai
 ```
